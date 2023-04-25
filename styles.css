@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    user-select: none;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    padding: 0px 80px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+ul li{
+    position: relative;
+    margin-left: 40px;
+}
+ul li a{
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    height: 3px;
+    width: 0%;
+    background-color: #834125;
+    opacity: 50%;
+    transition: width 0.3s ease 0s;
+    z-index: -10;
+}
+ul li a:hover::after{
+    width: 100%;
+}
+
+.main-center{
+    display: flex;
+    justify-content: center;
+}
+.main{
+    margin-top: 100px;
+    display: flex;
+}
+.main-img{
+    width: 510px;
+    height: 510px;
+    background-image: url(images/pencil1.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: 0.3s  ease-in;
+    position: relative;
+}
+.main-text{
+    margin-left: 110px;
+    padding: 40px;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease-in;
+}
+.main-text h1{
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+}
+.main-text p{
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+    line-height: 32px;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.pencil{
+    position: absolute;
+    left: 220px;
+    top: 40px;
+    z-index: 80;
+}
+
+.backrect{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -50;
+}
+
+#canvasForHTML{
+    background-color: white;
+    width: 510px;
+    height: 510px;
+    opacity: 0%;
+}
+#canvasForHTML:hover{
+    opacity: 70%;
+    transition: all 0.3s ease-in-out;
+    
+}
+.canvas-draw{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-weight: 700;
+}
+.canvas-draw button{
+    padding: 8px;
+    color: #000;
+    font-weight: 700;
+    width: 60px;
+    user-select: none;
+}

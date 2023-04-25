@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <img class="pencil" src="images/pencildraw.png" alt="#" width="36px">
+
+        <div class="nav">
+            <a class="logo" href="https://blackheart.kr/"><img src="images/logo.png" alt="#" width="120px"></a>
+            <ul>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">COLLECTION</a></li>
+                <li><a href="#">CONTENTS</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+                <li><a href="#"><img src="images/menu.png" alt="#" width="24px"></a></li>
+            </ul>
+        </div>
+    
+        <div class="main-center">
+            <div class="main">
+                <div class="main-img">
+                    <div id="canvasForHTML">
+                        <div class="canvas-draw">
+                            <p><i>DRAW</i></p>
+                            <button >clear</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-text">
+                        <h1>작은연필가게 흑심</h1>
+                        <p>
+                            2016년부터 추억의 도구로 전락해버린 연필의 가치에 대해 다시 한번 색각해보고, 다양하고 아름다운 연필을 소개하는 프로젝트 브랜드 ‘작은연필가게 흑심’입니다.
+                            <br>
+                            연필을 중심으로 예전의 것을 재해석하고, 디자인을 전개하고 있습니다. 
+                        </p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="btns">
+            <img class="btn-l" src="images/btn-l.png" alt="#">
+            <img class="btn-r" src="images/btn-r.png" alt="#">
+        </div>
+
+    </div>
+
+    <img class="backrect" src="images/back.png" alt="#">
+
+    <script>
+        //그림그리기
+        function setup() {
+            var canvas = createCanvas(510, 510);
+            //div안에 캔버스 조립하기
+            canvas.parent('canvasForHTML');
+            background("white");
+        }
+
+        function draw() {
+            if(mouseIsPressed){
+                stroke("black");
+                strokeWeight(3);
+                line(mouseX, mouseY, pmouseX, pmouseY);
+            }
+        }
+        //그림 초기화 버튼
+        const clearBtn = document.querySelector(".canvas-draw button");
+        clearBtn.addEventListener('click', function(){
+            clear();
+        });
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>
